@@ -1,0 +1,29 @@
+import java.util.Scanner;
+ 
+public class MediaComFor {
+ 
+    public static void main(String[] args) {
+ 
+        Scanner leitor = new Scanner(System.in);
+ 
+        System.out.print("Quantas notas deseja inserir :");
+        int qtdNotas = leitor.nextInt();
+ 
+        double acumulador = 0;
+        for (int contador = 1; contador <= qtdNotas; contador++) {
+            System.out.print("Digite a nota de numero " + contador + " : ");
+            double nota = leitor.nextDouble();
+            acumulador += nota;
+        }
+ 
+        double resultado = media(acumulador, qtdNotas);
+        System.out.println("O Resultado da sua média é : " + resultado);
+ 
+        leitor.close();
+    }
+ 
+    public static double media(final double valorAcumulado, final int qtdNotas) {
+        double resultado = valorAcumulado / qtdNotas;
+        return resultado;
+    }
+}
